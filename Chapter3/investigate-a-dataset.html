@@ -12850,7 +12850,7 @@ Name: ScheduledDay, dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10bc76d8&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10ac4cc0&gt;</pre>
 </div>
 
 </div>
@@ -12971,6 +12971,223 @@ AAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Appointment-Day">Appointment Day<a class="anchor-link" href="#Appointment-Day">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This column should be similar to the scheduled day. Let see.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;AppointmentDay&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0    2016-04-29T00:00:00Z
+1    2016-04-29T00:00:00Z
+2    2016-04-29T00:00:00Z
+3    2016-04-29T00:00:00Z
+4    2016-04-29T00:00:00Z
+Name: AppointmentDay, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here the hour seems to be zero. We can use the same function to convert the date than for scheculed day.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;AppointmentDay&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;AppointmentDay&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convertDate</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;AppointmentDay&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11181128&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+uFSPAAAAAElFTkSuQmCC
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='eda'></a></p>
 <h2 id="Exploratory-Data-Analysis">Exploratory Data Analysis<a class="anchor-link" href="#Exploratory-Data-Analysis">&#182;</a></h2><blockquote><p><strong>Tip</strong>: Now that you've trimmed and cleaned your data, you're ready to move on to exploration. Compute statistics and create visualizations with the goal of addressing the research questions that you posed in the Introduction section. It is recommended that you be systematic with your approach. Look at one variable at a time, and then follow it up by looking at relationships between variables.</p>
 </blockquote>
@@ -12980,7 +13197,7 @@ AAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Use this, and more code cells, to explore your data. Don&#39;t forget to add</span>
@@ -13003,7 +13220,7 @@ AAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Continue to explore the data to address your additional research</span>
