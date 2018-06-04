@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>investigate-a-dataset</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>investigate-a-dataset</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11726,7 +11699,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11722,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11767,57 +11742,12 @@ div#notebook {
     });
     </script>
     <!-- End of mathjax configuration --></head>
-
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="https://rawgit.com/ipython-contrib/jupyter_contrib_nbextensions/master/src/jupyter_contrib_nbextensions/nbextensions/toc2/main.css">
-
-<style type="text/css">
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.eot');
-    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-         url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.woff') format('woff'),
-         url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.ttf') format('truetype'),
-         url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-</style>
-
-<script src="https://rawgit.com/ipython-contrib/jupyter_contrib_nbextensions/master/src/jupyter_contrib_nbextensions/nbextensions/toc2/toc2.js"></script>
-
-<script>
-$( document ).ready(function(){
-
-            var cfg={'threshold':3,     // depth of toc (number of levels)
-             'number_sections': true,  // sections numbering
-             'toc_cell': false,          // useless here
-             'toc_window_display': true, // display the toc window
-             "toc_section_display": "block", // display toc contents in the window
-             'markTocItemOnScroll': false, 
-             'sideBar':true,             // sidebar or floating window
-             'navigate_menu':false,       // navigation menu (only in liveNotebook -- do not change)
-              title_cell: 'Table of Contents',
-              title_sidebar: 'Contents',
-            }
-
-            var st={};                  // some variables used in the script
-            st.oldTocHeight = undefined
-
-            // fire the main function with these parameters
-            require(['nbextensions/toc2/toc2'], function (toc2) {
-                toc2.table_of_contents(cfg, st);
-            });
-    });
-</script>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11830,7 +11760,8 @@ $( document ).ready(function(){
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11849,12 +11780,13 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Import python libraries</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#Import python libraries</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="c1">#import seaborn as sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
@@ -11863,7 +11795,8 @@ $( document ).ready(function(){
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11877,10 +11810,12 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Version of Python:</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Version of pandas: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Version of matplotlib :</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
-<span class="c1">#print(&quot;Version of seaborn: %s&quot;%(sns.__version__))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Version of Python: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Version of sys: sys is a python embedded module. Please refer to the python&#39;s version.&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Version of datetime: datetime is a python embedded module. Please refer to the python&#39;s version.&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Version of pandas: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Version of matplotlib :</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Version of seaborn: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -11891,16 +11826,14 @@ $( document ).ready(function(){
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Version of Python:3.5.2 (default, Nov 23 2017, 16:37:01) 
-[GCC 5.4.0 20160609]
-Version of pandas: 0.23.0
+<pre>Version of Python: 2.7.13 |Anaconda custom (64-bit)| (default, Dec 19 2016, 13:29:36) [MSC v.1500 64 bit (AMD64)]
+Version of sys: sys is a python embedded module. Please refer to the python&#39;s version.
+Version of datetime: datetime is a python embedded module. Please refer to the python&#39;s version.
+Version of pandas: 0.19.2
 Version of matplotlib :2.0.0
+Version of seaborn: 0.7.1
 </pre>
 </div>
 </div>
@@ -11909,16 +11842,28 @@ Version of matplotlib :2.0.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='wrangling'></a></p>
-<h2 id="Data-Wrangling">Data Wrangling<a class="anchor-link" href="#Data-Wrangling">&#182;</a></h2><h3 id="General-Properties">General Properties<a class="anchor-link" href="#General-Properties">&#182;</a></h3>
+<h2 id="Data-Wrangling">Data Wrangling<a class="anchor-link" href="#Data-Wrangling">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id='general_properties'></a></p>
+<h3 id="General-Properties">General Properties<a class="anchor-link" href="#General-Properties">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11932,7 +11877,7 @@ Version of matplotlib :2.0.0
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import the dataset</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import the dataset</span>
 <span class="n">noshowapp_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;noshowappointments-kagglev2-may-2016.csv&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -11941,11 +11886,12 @@ Version of matplotlib :2.0.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now have a first look on the content of the data.</p>
+<p>We can now have a first look on the content of the data. Here are the first 5 rows.</p>
 
 </div>
 </div>
@@ -11955,7 +11901,7 @@ Version of matplotlib :2.0.0
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11966,27 +11912,10 @@ Version of matplotlib :2.0.0
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[4]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -12104,7 +12033,8 @@ Version of matplotlib :2.0.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12118,7 +12048,7 @@ Version of matplotlib :2.0.0
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">columns</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 
 </div>
@@ -12129,17 +12059,14 @@ Version of matplotlib :2.0.0
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[5]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Index([&#39;PatientId&#39;, &#39;AppointmentID&#39;, &#39;Gender&#39;, &#39;ScheduledDay&#39;,
-       &#39;AppointmentDay&#39;, &#39;Age&#39;, &#39;Neighbourhood&#39;, &#39;Scholarship&#39;, &#39;Hipertension&#39;,
-       &#39;Diabetes&#39;, &#39;Alcoholism&#39;, &#39;Handcap&#39;, &#39;SMS_received&#39;, &#39;No-show&#39;],
+<pre>Index([u&#39;PatientId&#39;, u&#39;AppointmentID&#39;, u&#39;Gender&#39;, u&#39;ScheduledDay&#39;,
+       u&#39;AppointmentDay&#39;, u&#39;Age&#39;, u&#39;Neighbourhood&#39;, u&#39;Scholarship&#39;,
+       u&#39;Hipertension&#39;, u&#39;Diabetes&#39;, u&#39;Alcoholism&#39;, u&#39;Handcap&#39;,
+       u&#39;SMS_received&#39;, u&#39;No-show&#39;],
       dtype=&#39;object&#39;)</pre>
 </div>
 
@@ -12149,7 +12076,8 @@ Version of matplotlib :2.0.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12163,7 +12091,7 @@ Version of matplotlib :2.0.0
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12174,11 +12102,7 @@ Version of matplotlib :2.0.0
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[6]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12205,23 +12129,34 @@ dtype: int64</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see that no column constains empty elements.</p>
+<p>We can see that no column constains empty elements. We have 110527 entries in the dataset.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><p><strong>Tip</strong>: You should <em>not</em> perform too many operations in each cell. Create cells freely to explore your data. One option that you can take with this project is to do a lot of explorations in an initial notebook. These don't have to be organized, but make sure you use enough comments to understand the purpose of each code cell. Then, after you're done with your analysis, create a duplicate notebook where you will trim the excess and organize your steps so that you have a flowing, cohesive report.</p>
 <p><strong>Tip</strong>: Make sure that you keep your reader informed on the steps that you are taking in your investigation. Follow every code cell, or every set of related code cells, with a markdown cell to describe to the reader what was found in the preceding cell(s). Try to make it so that the reader can then understand what they will be seeing in the following cell(s).</p>
 </blockquote>
-<h3 id="Data-Cleaning-(Replace-this-with-more-specific-notes!)">Data Cleaning (Replace this with more specific notes!)<a class="anchor-link" href="#Data-Cleaning-(Replace-this-with-more-specific-notes!)">&#182;</a></h3>
+<h3 id="Data-Cleaning">Data Cleaning<a class="anchor-link" href="#Data-Cleaning">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Cleaning-the-Columns">Cleaning the Columns<a class="anchor-link" href="#Cleaning-the-Columns">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -12230,7 +12165,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># After discussing the structure of the data and any problems that need to be</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># After discussing the structure of the data and any problems that need to be</span>
 <span class="c1">#   cleaned, perform those cleaning steps in the second part of this section.</span>
 </pre></div>
 
@@ -12239,7 +12174,8 @@ dtype: int64</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12250,7 +12186,788 @@ dtype: int64</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Rename the column Hipertension and Handcap by the correct wording.</span>
+<span class="n">noshowapp_df</span> <span class="o">=</span> <span class="n">noshowapp_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Hipertension&quot;</span><span class="p">:</span> <span class="s2">&quot;Hypertension&quot;</span><span class="p">,</span> <span class="s2">&quot;Handcap&quot;</span><span class="p">:</span> <span class="s2">&quot;Handicap&quot;</span><span class="p">})</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Index([u&#39;PatientId&#39;, u&#39;AppointmentID&#39;, u&#39;Gender&#39;, u&#39;ScheduledDay&#39;,
+       u&#39;AppointmentDay&#39;, u&#39;Age&#39;, u&#39;Neighbourhood&#39;, u&#39;Scholarship&#39;,
+       u&#39;Hypertension&#39;, u&#39;Diabetes&#39;, u&#39;Alcoholism&#39;, u&#39;Handicap&#39;,
+       u&#39;SMS_received&#39;, u&#39;No-show&#39;],
+      dtype=&#39;object&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now the columns are less confusing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Cleaning-the-Rows">Cleaning the Rows<a class="anchor-link" href="#Cleaning-the-Rows">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will review each rows to see if they contains strange values.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="PatientId">PatientId<a class="anchor-link" href="#PatientId">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Check of the limit of the patient ID.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>39217.844389999998</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>999981631772427.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Patient IDs are quite huge and it seems to have a problem in the import of the file. After check in the CSV file, some patient ID are noted in an exponential notation.</p>
+<p>It seems to have to multiply the wrong IDs by 10E5.</p>
+<p>Let find the faulty IDs and correct the values.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5000000</span><span class="p">][</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3950       93779.52927
+73228     537615.28476
+73303     141724.16655
+100517     39217.84439
+105430     43741.75652
+Name: PatientId, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By trying some limit value we find those 5 values which have a strange number.</p>
+<p>Before correct the value, we have to check if the values does not exists in the table and check if they can be related to the same person.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">correctPatientID</span><span class="p">(</span><span class="n">patientID</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Check if a patient ID is present is the database with the ID*10E5.</span>
+<span class="sd">    If not correct the row in the dataset.</span>
+<span class="sd">    If yes display a message for further investigation</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">newPatientID</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">patientID</span><span class="o">*</span><span class="mf">10E5</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">noshowapp_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">newPatientID</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Match found for patientID </span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">patientID</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;----------------------------------------&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;No match found for patient ID </span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">patientID</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Correct the value. PatientID </span><span class="si">%.1f</span><span class="s2"> becomes </span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">patientID</span><span class="p">,</span> <span class="n">newPatientID</span><span class="p">))</span>
+        <span class="n">noshowapp_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">patientID</span><span class="p">),([</span><span class="s1">&#39;PatientId&#39;</span><span class="p">])]</span> <span class="o">=</span> <span class="n">newPatientID</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">patientIDtoCheck</span> <span class="o">=</span> <span class="n">noshowapp_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5000000</span><span class="p">][</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">patientIDtoCheck</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">correctPatientID</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>No match found for patient ID 93779.5
+Correct the value. PatientID 93779.5 becomes 93779529270.0
+
+No match found for patient ID 537615.3
+Correct the value. PatientID 537615.3 becomes 537615284760.0
+
+No match found for patient ID 141724.2
+Correct the value. PatientID 141724.2 becomes 141724166550.0
+
+No match found for patient ID 39217.8
+Correct the value. PatientID 39217.8 becomes 39217844390.0
+
+No match found for patient ID 43741.8
+Correct the value. PatientID 43741.8 becomes 43741756519.0
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By luck no duplicates were found and all patient IDs are now corrected.
+Let check if it is really the case:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5000000</span><span class="p">][</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Series([], Name: PatientId, dtype: float64)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The result is an empty serie. The IDs are now corrected.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>How many patients are registered in the dataset. some patients can have more than one appointment.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;PatientId&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>62299</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>62299 unique patients are in the dataset.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="AppointmentID">AppointmentID<a class="anchor-link" href="#AppointmentID">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Check the limit of the data contains in column "AppointmentID"</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;AppointmentID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5030230</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;AppointmentID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5790484</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For this column the limits make sense.</p>
+<p>Each ID should be unique. Let check that.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;AppointmentID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>110527</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All Appointment IDs are unique. This row seems to be clean.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Gender">Gender<a class="anchor-link" href="#Gender">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Which gender do we have in this column. Only Male and Female?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([&#39;F&#39;, &#39;M&#39;], dtype=object)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>No creativity here. We have only male and female.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Scheduled-day">Scheduled day<a class="anchor-link" href="#Scheduled-day">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This column indicate when the patient call for his/her appointment.</p>
+<p>Let have a look on the format:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;ScheduledDay&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0    2016-04-29T18:38:08Z
+1    2016-04-29T16:08:27Z
+2    2016-04-29T16:19:04Z
+3    2016-04-29T17:29:31Z
+4    2016-04-29T16:07:23Z
+Name: ScheduledDay, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The format is a string and should be converted.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">convertDate</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%SZ&#39;</span><span class="p">)</span>
+
+<span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;ScheduledDay&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;ScheduledDay&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convertDate</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let see what we have for data recorded.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;ScheduledDay&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10bc76d8&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+AAAASUVORK5CYII=
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The repartition of the data is quite strange. It seems that data were collected more or less during 3 month. This will exclude an analysis of seasonal variations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12263,10 +12980,10 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use this, and more code cells, to explore your data. Don&#39;t forget to add</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Use this, and more code cells, to explore your data. Don&#39;t forget to add</span>
 <span class="c1">#   Markdown cells to document your observations and findings.</span>
 </pre></div>
 
@@ -12275,7 +12992,8 @@ dtype: int64</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12285,10 +13003,10 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Continue to explore the data to address your additional research</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Continue to explore the data to address your additional research</span>
 <span class="c1">#   questions. Add more headers as needed if you have more questions to</span>
 <span class="c1">#   investigate.</span>
 </pre></div>
@@ -12298,7 +13016,8 @@ dtype: int64</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12310,11 +13029,20 @@ dtype: int64</pre>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
-
- 
-
-
 </html>
