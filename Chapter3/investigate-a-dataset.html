@@ -12144,9 +12144,6 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Tip</strong>: You should <em>not</em> perform too many operations in each cell. Create cells freely to explore your data. One option that you can take with this project is to do a lot of explorations in an initial notebook. These don't have to be organized, but make sure you use enough comments to understand the purpose of each code cell. Then, after you're done with your analysis, create a duplicate notebook where you will trim the excess and organize your steps so that you have a flowing, cohesive report.</p>
-<p><strong>Tip</strong>: Make sure that you keep your reader informed on the steps that you are taking in your investigation. Follow every code cell, or every set of related code cells, with a markdown cell to describe to the reader what was found in the preceding cell(s). Try to make it so that the reader can then understand what they will be seeing in the following cell(s).</p>
-</blockquote>
 <h3 id="Data-Cleaning">Data Cleaning<a class="anchor-link" href="#Data-Cleaning">&#182;</a></h3>
 </div>
 </div>
@@ -12850,7 +12847,7 @@ Name: ScheduledDay, dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10ac4cc0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10b86128&gt;</pre>
 </div>
 
 </div>
@@ -12961,7 +12958,8 @@ AAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The repartition of the data is quite strange. It seems that data were collected more or less during 3 month. This will exclude an analysis of seasonal variations.</p>
+<p>The repartition of the data is quite strange. It seems that data were collected more or less during 2 or 3 month. A look on the appointment day will give us more details.</p>
+<p>In all case this will exclude an analysis of a potential seasonal variations.</p>
 
 </div>
 </div>
@@ -13062,7 +13060,7 @@ Name: AppointmentDay, dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11181128&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10c33128&gt;</pre>
 </div>
 
 </div>
@@ -13188,6 +13186,1049 @@ uFSPAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>The appointment day's values reveal the reason of the repartition of the schedule day's values. The dataset if just for one month. Due to the fact that some people set their appoinement in advance this explained the shape of the schedule days's graph.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Age">Age<a class="anchor-link" href="#Age">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Check the limit of the ages in the dataset.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>115</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The maximum is quite high but realistic. The minimum value is not valid. How many such values we have and for which entries?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientId</th>
+      <th>AppointmentID</th>
+      <th>Gender</th>
+      <th>ScheduledDay</th>
+      <th>AppointmentDay</th>
+      <th>Age</th>
+      <th>Neighbourhood</th>
+      <th>Scholarship</th>
+      <th>Hypertension</th>
+      <th>Diabetes</th>
+      <th>Alcoholism</th>
+      <th>Handicap</th>
+      <th>SMS_received</th>
+      <th>No-show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>99832</th>
+      <td>4.659432e+14</td>
+      <td>5775010</td>
+      <td>F</td>
+      <td>2016-06-06 08:58:13</td>
+      <td>2016-06-06</td>
+      <td>-1</td>
+      <td>ROMÃO</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Only one entrie is wrong. We can correct it by replacing the -1 value by the median age of the women from ROMÃO.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ageSubstitute</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">noshowapp_df</span><span class="p">[(</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> \
+                                       <span class="o">&amp;</span> <span class="p">(</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Neighbourhood&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;ROMÃO&#39;</span><span class="p">)</span> \
+                                       <span class="o">&amp;</span> <span class="p">(</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">)][</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()))</span>
+<span class="n">noshowapp_df</span> <span class="o">=</span> <span class="n">noshowapp_df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Age&#39;</span><span class="p">:{</span><span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="n">ageSubstitute</span><span class="p">}})</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">99832</span><span class="p">][</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[30]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>33</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientId</th>
+      <th>AppointmentID</th>
+      <th>Gender</th>
+      <th>ScheduledDay</th>
+      <th>AppointmentDay</th>
+      <th>Age</th>
+      <th>Neighbourhood</th>
+      <th>Scholarship</th>
+      <th>Hypertension</th>
+      <th>Diabetes</th>
+      <th>Alcoholism</th>
+      <th>Handicap</th>
+      <th>SMS_received</th>
+      <th>No-show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>58014</th>
+      <td>9.762948e+14</td>
+      <td>5651757</td>
+      <td>F</td>
+      <td>2016-05-03 09:14:53</td>
+      <td>2016-05-03</td>
+      <td>102</td>
+      <td>CONQUISTA</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>63912</th>
+      <td>3.196321e+13</td>
+      <td>5700278</td>
+      <td>F</td>
+      <td>2016-05-16 09:17:44</td>
+      <td>2016-05-19</td>
+      <td>115</td>
+      <td>ANDORINHAS</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>63915</th>
+      <td>3.196321e+13</td>
+      <td>5700279</td>
+      <td>F</td>
+      <td>2016-05-16 09:17:44</td>
+      <td>2016-05-19</td>
+      <td>115</td>
+      <td>ANDORINHAS</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>68127</th>
+      <td>3.196321e+13</td>
+      <td>5562812</td>
+      <td>F</td>
+      <td>2016-04-08 14:29:17</td>
+      <td>2016-05-16</td>
+      <td>115</td>
+      <td>ANDORINHAS</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>76284</th>
+      <td>3.196321e+13</td>
+      <td>5744037</td>
+      <td>F</td>
+      <td>2016-05-30 09:44:51</td>
+      <td>2016-05-30</td>
+      <td>115</td>
+      <td>ANDORINHAS</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>90372</th>
+      <td>2.342836e+11</td>
+      <td>5751563</td>
+      <td>F</td>
+      <td>2016-05-31 10:19:49</td>
+      <td>2016-06-02</td>
+      <td>102</td>
+      <td>MARIA ORTIZ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>97666</th>
+      <td>7.482346e+14</td>
+      <td>5717451</td>
+      <td>F</td>
+      <td>2016-05-19 07:57:56</td>
+      <td>2016-06-03</td>
+      <td>115</td>
+      <td>SÃO JOSÉ</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Only a few visits for people aged more than 100 years. 4 differents people had some appointments.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now there is no more wrong value in the Age column.</p>
+<p>What is the repartition of the ages?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11044160&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYYAAAD3CAYAAAAZifM1AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAEeJJREFUeJzt3W2InWedx/HvJNMkrUzCgCcGoWxXZf+EhW6li+22SRNK
+bZr40EXoKqW0btlsLdGKFPqUFKlEWotWGsVWIqGp1TemFddAbMG6IZldLUoLCda/pLr4Yl0Zah6m
+xCQmmX1x30PPNU4zyX1OPHNOv59X97nOdZ9z/ZmZ85vruh/O0OTkJJIkTZnX6wFIkuYWg0GSVDAY
+JEkFg0GSVDAYJEmF4V4P4GyNj090dPrU6OhFHDx4tFvD6blBqwesqV9YU3+YqqnVGhk6133fNjOG
+4eH5vR5CVw1aPWBN/cKa+kMnNb1tgkGSdHbOaikpIq4AvpSZqyPiMuBrwCngOHBrZv4hItYDdwAn
+gc2ZuTMiLgSeAZYCE8BtmTkeEVcCj9d9X8jMh7pemSSpkVlnDBFxD/AtYFHd9DjwmcxcDTwH3BsR
+y4C7gKuBNcDDEbEQuBPYl5krgaeBTfVrPAncDKwAroiI93etIklSR85mKek14GNtjz+Rma/U28PA
+MeADwFhmHs/Mw8AB4FKqD/4f1X13AddFxGJgYWa+lpmTwPPAdZ2XIknqhlmXkjLz2Yi4pO3x7wEi
+4irg08A1VLOEw227TQBLgMVt7e1tR6b1fc9s4xgdvajjA0St1khH+881g1YPWFO/sKb+0LSmRqer
+RsTHgY3Ah+pjBkeA9hGMAIeoAmDkDG3t7WfU6alkrdYI4+MTHb3GXDJo9YA19Qtr6g9TNTUJh3M+
+KykibqGaKazOzN/UzS8BKyNiUUQsAZYD+4ExYF3dZy2wJzOPACci4r0RMUQ129hzziOXJJ0X5zRj
+iIj5wBbgd8BzEQGwOzM/HxFbqD7g5wEbM/NYRDwBbI+IvcAJqgPOAJ8CvgPMpzor6WddqUaS1LGh
+fvk+hk6vfB60qeKg1QPW1C+sqT+0LSWd85XPfXNLjE595O4fNN53233XdnEkkjS3eeWzJKlgMEiS
+CgaDJKlgMEiSCgaDJKlgMEiSCgaDJKlgMEiSCgaDJKlgMEiSCgaDJKlgMEiSCgaDJKlgMEiSCgaD
+JKlgMEiSCgaDJKlgMEiSCgaDJKlgMEiSCgaDJKlgMEiSCgaDJKlgMEiSCgaDJKlgMEiSCgaDJKkw
+fDadIuIK4EuZuToi3gc8BUwC+4ENmXk6ItYDdwAngc2ZuTMiLgSeAZYCE8BtmTkeEVcCj9d9X8jM
+h7pdmCSpmVlnDBFxD/AtYFHd9BiwKTNXAkPAjRGxDLgLuBpYAzwcEQuBO4F9dd+ngU31azwJ3Ays
+AK6IiPd3ryRJUifOZsbwGvAx4Nv148uB3fX2LuB64BQwlpnHgeMRcQC4lOqD/9G2vg9GxGJgYWa+
+BhARzwPXAS+faRCjoxcxPDz/bOvqqlZrpCfvO5u5Oq5OWFN/sKb+0LSmWYMhM5+NiEvamoYyc7Le
+ngCWAIuBw219Zmpvbzsyre97ZhvHwYNHZ+ty3oyPT/Tsvd9KqzUyJ8fVCWvqD9bUH6ZqahIOTQ4+
+n27bHgEOUX3Qj8zSPltfSdIc0CQYXo6I1fX2WmAP8BKwMiIWRcQSYDnVgekxYF1738w8ApyIiPdG
+xBDVMYk9HdQgSeqiszoraZq7ga0RsQB4FdiRmaciYgvVB/w8YGNmHouIJ4DtEbEXOEF1wBngU8B3
+gPlUZyX9rNNCJEndcVbBkJn/A1xZb/8aWDVDn63A1mltR4GbZuj706nXkyTNLV7gJkkqGAySpEKT
+YwzSQLr9kRcb77vtvmu7OBKpt5wxSJIKBoMkqWAwSJIKBoMkqWAwSJIKBoMkqWAwSJIKXseggdHJ
+dQiS3mQwqOu8UEzqby4lSZIKzhg0I5dlpLcvZwySpILBIEkqGAySpILBIEkqGAySpILBIEkqeLqq
+1AVe1KdB4oxBklQwGCRJBYNBklQwGCRJBYNBklTwrKSz4Bknkt5OGgVDRFwAbAcuAU4B64GTwFPA
+JLAf2JCZpyNiPXBH/fzmzNwZERcCzwBLgQngtswc76wUSVI3NF1KWgcMZ+ZVwBeALwKPAZsycyUw
+BNwYEcuAu4CrgTXAwxGxELgT2Ff3fRrY1FkZkqRuabqU9GtgOCLmAYuBPwNXArvr53cB11PNJsYy
+8zhwPCIOAJcCK4BH2/o+2HAcegt+n4KkppoGwxtUy0i/At4JfBi4JjMn6+cngCVUoXG4bb+Z2qfa
+zmh09CKGh+c3HG7vtFojffnavTKINc2mH2vuxzHPxpre1DQYPgc8n5n3R8TFwIvAgrbnR4BDwJF6
++0ztU21ndPDg0YZD7a3x8Ynz8rqt1sh5e+1eGsSaZtNvNQ/i794g19QkHJoeYzjIm//x/xG4AHg5
+IlbXbWuBPcBLwMqIWBQRS4DlVAemx6iOU7T3lSTNAU1nDF8FtkXEHqqZwgPAz4GtEbEAeBXYkZmn
+ImIL1Qf/PGBjZh6LiCeA7RGxFzgB3NxpIZKk7mgUDJn5BvAvMzy1aoa+W4Gt09qOAjc1eW9J0vnl
+lc+SpILBIEkqGAySpILBIEkqGAySpIJ3Vz3PvDOrpH7jjEGSVHDGMId5IzxJveCMQZJUMBgkSQWD
+QZJUMBgkSQWDQZJUMBgkSQVPV9Wc4im6Uu85Y5AkFQwGSVLBYJAkFQwGSVLBYJAkFQwGSVLBYJAk
+FQwGSVLBYJAkFQwGSVLBYJAkFQwGSVKh8U30IuJ+4KPAAuAbwG7gKWAS2A9syMzTEbEeuAM4CWzO
+zJ0RcSHwDLAUmABuy8zxTgqRJHVHoxlDRKwGrgKuBlYBFwOPAZsycyUwBNwYEcuAu+p+a4CHI2Ih
+cCewr+77NLCpwzokSV3SdClpDbAP+D7wQ2AncDnVrAFgF3Ad8AFgLDOPZ+Zh4ABwKbAC+NG0vpKk
+OaDpUtI7gb8BPgz8LfAfwLzMnKyfnwCWAIuBw237zdQ+1XZGo6MXMTw8v+Fwpbmr1Rrp9RDOWT+O
+eTbW9KamwfA68KvMPAFkRByjWk6aMgIcAo7U22dqn2o7o4MHjzYcqjS3jY9P9HoI56TVGum7Mc9m
+kGtqEg5Nl5L2AjdExFBEvBt4B/Dj+tgDwFpgD/ASsDIiFkXEEmA51YHpMWDdtL6SpDmg0YyhPrPo
+GqoP/nnABuC3wNaIWAC8CuzIzFMRsYXqg38esDEzj0XEE8D2iNgLnABu7kItkqQuaHy6ambeM0Pz
+qhn6bQW2Tms7CtzU9L0lSeePF7hJkgoGgySp0HgpSVJ33P7Ii4333XbftV0ciVRxxiBJKhgMkqSC
+wSBJKhgMkqSCwSBJKhgMkqSCwSBJKhgMkqSCwSBJKhgMkqSCwSBJKhgMkqSCwSBJKhgMkqSCwSBJ
+KhgMkqSCwSBJKhgMkqSCwSBJKhgMkqSCwSBJKhgMkqSCwSBJKhgMkqTCcK8HIKm52x95sfG+2+67
+tosj0SDpKBgiYinwC+CDwEngKWAS2A9syMzTEbEeuKN+fnNm7oyIC4FngKXABHBbZo53MhZJUnc0
+XkqKiAuAbwJ/qpseAzZl5kpgCLgxIpYBdwFXA2uAhyNiIXAnsK/u+zSwqXkJkqRu6mTG8GXgSeD+
++vHlwO56exdwPXAKGMvM48DxiDgAXAqsAB5t6/vgbG82OnoRw8PzOxiupHat1khP9p2rrOlNjYIh
+Ij4JjGfm8xExFQxDmTlZb08AS4DFwOG2XWdqn2o7o4MHjzYZqqS3MD4+0Wi/Vmuk8b5z1SDX1CQc
+ms4YbgcmI+I64DKq5aClbc+PAIeAI/X2mdqn2iRJc0CjYwyZeU1mrsrM1cArwK3ArohYXXdZC+wB
+XgJWRsSiiFgCLKc6MD0GrJvWV5I0B3TzOoa7gYci4r+BBcCOzPw/YAvVB/+LwMbMPAY8Afx9ROwF
+/h14qIvjkCR1oOPrGOpZw5RVMzy/Fdg6re0ocFOn7y1J6j6vfJYkFQwGSVLBYJAkFQwGSVLBYJAk
+FQwGSVLBYJAkFQwGSVLBYJAkFQwGSVLBr/aU3qY6+VpQ8KtBB5kzBklSwWCQJBUMBklSwWCQJBUM
+BklSwWCQJBUMBklSwWCQJBUMBklSwWCQJBUMBklSwWCQJBUMBklSwWCQJBUMBklSwWCQJBUafVFP
+RFwAbAMuARYCm4FfAk8Bk8B+YENmno6I9cAdwElgc2bujIgLgWeApcAEcFtmjndWiiSpG5rOGG4B
+Xs/MlcANwNeBx4BNddsQcGNELAPuAq4G1gAPR8RC4E5gX933aWBTZ2VIkrql6Vd7fg/YUW8PUc0G
+Lgd21227gOuBU8BYZh4HjkfEAeBSYAXwaFvfB2d7w9HRixgent9wuJK6rdUa6fUQumrQ6oHmNTUK
+hsx8AyAiRqgCYhPw5cycrLtMAEuAxcDhtl1nap9qO6ODB482Gaqk8+Qjd/+g8b5z7fuiW60Rxscn
+ej2MrpqqqUk4ND74HBEXAz8Bvp2Z3wVOtz09AhwCjtTbZ2qfapMkzQGNgiEi3gW8ANybmdvq5pcj
+YnW9vRbYA7wErIyIRRGxBFhOdWB6DFg3ra8kaQ5oeozhAWAUeDAipo4PfBbYEhELgFeBHZl5KiK2
+UH3wzwM2ZuaxiHgC2B4Re4ETwM0dVSFJ6pqhycnJ2XvNAePjEx0N9PZHXuzWUCR1yGMM51/bMYah
+c93XC9wkSQWDQZJUMBgkSQWDQZJUMBgkSQWDQZJUMBgkSQWDQZJUMBgkSQWDQZJUMBgkSQWDQZJU
+MBgkSQWDQZJUMBgkSQWDQZJUMBgkSQWDQZJUaPqdz5LUWCdftTvXvhZ0EDljkCQVDAZJUsFgkCQV
+DAZJUsFgkCQVDAZJUsFgkCQVvI5BUl/xGojzr2fBEBHzgG8A/wAcB/4tMw/0ajySpEovl5L+GViU
+mf8E3Ad8pYdjkSTVehkMK4AfAWTmT4F/7OFYJEm1Xh5jWAwcbnt8KiKGM/PkTJ1brZGhTt7sh1+5
+sZPdJQ24Vmuk10PouqY19XLGcARoH/W8twoFSdJfTy+DYQxYBxARVwL7ejgWSVKtl0tJ3wc+GBH/
+BQwB/9rDsUiSakOTk5O9HoMkaQ7xymdJUsFgkCQVDAZJUmGg75U0KLfdiIgLgG3AJcBCYDPwS+Ap
+YBLYD2zIzNM9GmJjEbEU+AXwQeAkfV5TRNwPfBRYQPW7t5s+rqn+3dtO9bt3ClhPH/+cIuIK4EuZ
+uToi3scMdUTEeuAOqjo3Z+bOng34LEyr6TLga1Q/q+PArZn5h3OtadBnDINy241bgNczcyVwA/B1
+4DFgU902BPTdFXz1h843gT/VTX1dU0SsBq4CrgZWARfT5zVRnVI+nJlXAV8Avkif1hQR9wDfAhbV
+TX9RR0QsA+6i+hmuAR6OiIW9GO/ZmKGmx4HPZOZq4Dng3iY1DXowDMptN74HPFhvD1Gl/uVU/40C
+7AKu68G4OvVl4Engf+vH/V7TGqrrcb4P/BDYSf/X9GtguJ59Lwb+TP/W9BrwsbbHM9XxAWAsM49n
+5mHgAHDpX3WU52Z6TZ/IzFfq7WHgGA1qGvRgmPG2G70aTFOZ+UZmTkTECLAD2AQMZebUucYTwJKe
+DbCBiPgkMJ6Zz7c193VNwDup/vm4CfgU8B2qK/r7uaY3qJaRfgVsBbbQpz+nzHyWKtimzFTH9M+M
+OV3f9Joy8/cAEXEV8GngqzSoadCDYWBuuxERFwM/Ab6dmd8F2td0R4BDPRlYc7dTXeD4n8BlwNPA
+0rbn+7Gm14HnM/NEZibVf2vtf4D9WNPnqGr6O6pjddupjp9M6ceapsz0NzT9M6Pv6ouIj1PNxD+U
+meM0qGnQg2EgbrsREe8CXgDuzcxtdfPL9Zo2wFpgTy/G1lRmXpOZq+q10FeAW4Fd/VwTsBe4ISKG
+IuLdwDuAH/d5TQd587/NPwIX0Oe/e21mquMlYGVELIqIJcByqgPTfSEibqGaKazOzN/UzedcU98t
+q5yjQbntxgPAKPBgREwda/gssCUiFgCvUi0x9bu7ga39WlNm7oyIa6j+EOcBG4Df0sc1US1FbIuI
+PVQzhQeAn9PfNU35i9+3zDwVEVuoQmIesDEzj/VykGcrIuZTLfX9DnguIgB2Z+bnz7Umb4khSSoM
++lKSJOkcGQySpILBIEkqGAySpILBIEkqGAySpILBIEkq/D81J2So3zdxtAAAAABJRU5ErkJggg==
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here nothing suspect. We see a lot of appointment are done for very joung children.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Neighbourhood">Neighbourhood<a class="anchor-link" href="#Neighbourhood">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The following neighbourhoods are present in the dataset:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Due to special caracters, the standard export does not work well. A print commant solve this issue.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Neighbourhood&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>JARDIM DA PENHA
+MATA DA PRAIA
+PONTAL DE CAMBURI
+REPÚBLICA
+GOIABEIRAS
+ANDORINHAS
+CONQUISTA
+NOVA PALESTINA
+DA PENHA
+TABUAZEIRO
+BENTO FERREIRA
+SÃO PEDRO
+SANTA MARTHA
+SÃO CRISTÓVÃO
+MARUÍPE
+GRANDE VITÓRIA
+SÃO BENEDITO
+ILHA DAS CAIEIRAS
+SANTO ANDRÉ
+SOLON BORGES
+BONFIM
+JARDIM CAMBURI
+MARIA ORTIZ
+JABOUR
+ANTÔNIO HONÓRIO
+RESISTÊNCIA
+ILHA DE SANTA MARIA
+JUCUTUQUARA
+MONTE BELO
+MÁRIO CYPRESTE
+SANTO ANTÔNIO
+BELA VISTA
+PRAIA DO SUÁ
+SANTA HELENA
+ITARARÉ
+INHANGUETÁ
+UNIVERSITÁRIO
+SÃO JOSÉ
+REDENÇÃO
+SANTA CLARA
+CENTRO
+PARQUE MOSCOSO
+DO MOSCOSO
+SANTOS DUMONT
+CARATOÍRA
+ARIOVALDO FAVALESSA
+ILHA DO FRADE
+GURIGICA
+JOANA D´ARC
+CONSOLAÇÃO
+PRAIA DO CANTO
+BOA VISTA
+MORADA DE CAMBURI
+SANTA LUÍZA
+SANTA LÚCIA
+BARRO VERMELHO
+ESTRELINHA
+FORTE SÃO JOÃO
+FONTE GRANDE
+ENSEADA DO SUÁ
+SANTOS REIS
+PIEDADE
+JESUS DE NAZARETH
+SANTA TEREZA
+CRUZAMENTO
+ILHA DO PRÍNCIPE
+ROMÃO
+COMDUSA
+SANTA CECÍLIA
+VILA RUBIM
+DE LOURDES
+DO QUADRO
+DO CABRAL
+HORTO
+SEGURANÇA DO LAR
+ILHA DO BOI
+FRADINHOS
+NAZARETH
+AEROPORTO
+ILHAS OCEÂNICAS DE TRINDADE
+PARQUE INDUSTRIAL
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All seems to be OK. We can notice a Santa Lucia and Santa Luzia. After a check, those two areas exist and are different in Brazil.</p>
+<p>No corrections are needed here.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Scholarship">Scholarship<a class="anchor-link" href="#Scholarship">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The column scholarship indicate if the person is enrolled in Brasilian welfare program Bolsa Família. The value should be 0 or 1.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="p">[</span><span class="s1">&#39;Scholarship&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0, 1], dtype=int64)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Only 0 and 1 are present.</p>
+<p>No corrections are needed here.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Hypertension,-Diabetes,-Alcoholism,-Handicap">Hypertension, Diabetes, Alcoholism, Handicap<a class="anchor-link" href="#Hypertension,-Diabetes,-Alcoholism,-Handicap">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Those columns indicates some information about some pathologies of the patient.
+The column sms reveceived indicates if some messages were sent to the patient or not. It is also a binary information.</p>
+<p>All columns are independent and should be filled by 0 or 1.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ColumnsToCheck</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hypertension&#39;</span><span class="p">,</span> <span class="s1">&#39;Diabetes&#39;</span><span class="p">,</span> <span class="s1">&#39;Alcoholism&#39;</span><span class="p">,</span> <span class="s1">&#39;Handicap&#39;</span><span class="p">,</span> <span class="s1">&#39;SMS_received&#39;</span><span class="p">]</span>
+<span class="n">valueToCheck</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">checkValue</span><span class="p">(</span><span class="n">entrie</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">entrie</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">valueToCheck</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">checkValueInColumn</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">noshowapp_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">checkValue</span><span class="p">)</span>
+    <span class="k">if</span>  <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Error found in column </span><span class="si">%s</span><span class="s2"> (value out of boundary). Please check it.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">col</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Column </span><span class="si">%s</span><span class="s2"> OK&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">col</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">ColumnsToCheck</span><span class="p">:</span>
+    <span class="n">checkValueInColumn</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Column Hypertension OK
+Column Diabetes OK
+Column Alcoholism OK
+Column Handicap OK
+Column SMS_received OK
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All columns contain only 0 or 1.</p>
+<p>No correction are needed here.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="No-show">No-show<a class="anchor-link" href="#No-show">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The column No-show indicate if a patient was present for his/her appointment or not.
+Instead of 0 and 1 the value here are:</p>
+<ul>
+<li>yes: if the patient was not present</li>
+<li>no: if the patient was present</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># We can reuse the function checkValueInColumn to check this one</span>
+<span class="n">valueToCheck</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;No&#39;</span><span class="p">]</span>
+
+<span class="n">checkValueInColumn</span><span class="p">(</span><span class="s1">&#39;No-show&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Column No-show OK
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The column No-show seems to be clean.</p>
+<p>No correction are needed.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conclusion-of-the-data-cleaning">Conclusion of the data cleaning<a class="anchor-link" href="#Conclusion-of-the-data-cleaning">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The overall dataset is relatively clean. No big corrections were done on it.</p>
+<p>Here are the first 5 entries of the cleaned dataset.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">noshowapp_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientId</th>
+      <th>AppointmentID</th>
+      <th>Gender</th>
+      <th>ScheduledDay</th>
+      <th>AppointmentDay</th>
+      <th>Age</th>
+      <th>Neighbourhood</th>
+      <th>Scholarship</th>
+      <th>Hypertension</th>
+      <th>Diabetes</th>
+      <th>Alcoholism</th>
+      <th>Handicap</th>
+      <th>SMS_received</th>
+      <th>No-show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.987250e+13</td>
+      <td>5642903</td>
+      <td>F</td>
+      <td>2016-04-29 18:38:08</td>
+      <td>2016-04-29</td>
+      <td>62</td>
+      <td>JARDIM DA PENHA</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.589978e+14</td>
+      <td>5642503</td>
+      <td>M</td>
+      <td>2016-04-29 16:08:27</td>
+      <td>2016-04-29</td>
+      <td>56</td>
+      <td>JARDIM DA PENHA</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.262962e+12</td>
+      <td>5642549</td>
+      <td>F</td>
+      <td>2016-04-29 16:19:04</td>
+      <td>2016-04-29</td>
+      <td>62</td>
+      <td>MATA DA PRAIA</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8.679512e+11</td>
+      <td>5642828</td>
+      <td>F</td>
+      <td>2016-04-29 17:29:31</td>
+      <td>2016-04-29</td>
+      <td>8</td>
+      <td>PONTAL DE CAMBURI</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8.841186e+12</td>
+      <td>5642494</td>
+      <td>F</td>
+      <td>2016-04-29 16:07:23</td>
+      <td>2016-04-29</td>
+      <td>56</td>
+      <td>JARDIM DA PENHA</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='eda'></a></p>
 <h2 id="Exploratory-Data-Analysis">Exploratory Data Analysis<a class="anchor-link" href="#Exploratory-Data-Analysis">&#182;</a></h2><blockquote><p><strong>Tip</strong>: Now that you've trimmed and cleaned your data, you're ready to move on to exploration. Compute statistics and create visualizations with the goal of addressing the research questions that you posed in the Introduction section. It is recommended that you be systematic with your approach. Look at one variable at a time, and then follow it up by looking at relationships between variables.</p>
 </blockquote>
@@ -13197,7 +14238,7 @@ uFSPAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Use this, and more code cells, to explore your data. Don&#39;t forget to add</span>
@@ -13220,7 +14261,7 @@ uFSPAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Continue to explore the data to address your additional research</span>
