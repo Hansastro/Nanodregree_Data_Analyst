@@ -12,9 +12,9 @@ The data are exporter in the OSM file: Apensen.osm
 
 File included:
 - README.txt : This file
-- Parse OSM File.ipynb : The jupyter notebook of the project
-- Parse OSM File.py: All the source code of the project
-- Parse OSM File.pdf: A PDF export of the project
+- OpenStreetMap_Project.ipynb : The jupyter notebook of the project
+- OpenStreetMap_Project.py: All the source code of the project
+- OpenStreetMap_Project.pdf: A PDF export of the project
 - data_wrangling_schema.sql: the schema of the database (needed to execute the code)
 - Apensen.osm: An Example OSM file covers a subset of the whole dataset
 - Ressources.txt: List of website used
