@@ -1,3 +1,10 @@
+CHANGE LOG:
+- Move the cleaning part just after the database creation
+- Add the check and correction of the postcode, phone and fax number
+- Add some comments about problems in the improvements proposal.
+
+-----------------------------------------------------------------------------
+
 The data is the area covers the city of Buxtehude and some area in south and east. This area contains some city and land parts and have probably less focus than big cities.
 
 The area is visible here:
