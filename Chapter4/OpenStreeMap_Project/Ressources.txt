@@ -3,3 +3,4 @@ List of website used for the project:
 - https://docs.python.org/3/ : Python 3 documentation
 - https://pandas.pydata.org/pandas-docs/stable/ : Pandas documentation
 - https://matplotlib.org/contents.html : Matplotlib site (for the graph)
+- https://de.wikipedia.org/wiki/Stra%C3%9Fenname : How to name street in Germany
