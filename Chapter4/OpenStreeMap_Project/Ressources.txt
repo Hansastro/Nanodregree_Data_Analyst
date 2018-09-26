@@ -1,0 +1,5 @@
+List of website used for the project:
+- https://stackoverflow.com/ : Used of technical points
+- https://docs.python.org/3/ : Python 3 documentation
+- https://pandas.pydata.org/pandas-docs/stable/ : Pandas documentation
+- https://matplotlib.org/contents.html : Matplotlib site (for the graph)
