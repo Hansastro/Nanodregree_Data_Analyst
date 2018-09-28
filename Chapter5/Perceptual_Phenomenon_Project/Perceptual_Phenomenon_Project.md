@@ -2,9 +2,9 @@
 
 ## Introduction
 
-## Question 1: Indentify variable in the experiment
+## Question 1: Indentify variables in the experiment
 
-## Question 2a: Establish hypothesis
+## Question 2a: Establish hypotheses
 
 ## Question 2b: Establish statistical test
 
