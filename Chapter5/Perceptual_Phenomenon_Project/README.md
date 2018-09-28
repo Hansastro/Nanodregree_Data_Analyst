@@ -1,5 +1,6 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+This REAME file describe the files included in the Perceptual Phenomenon Project:
+- README.md: This file
+- Perceptual_Phenomenon_Project.pdf : Main report contaning the answer to the questions
 
-Test
+link to the [Perceptual_Phenomenon_Project.md](Perceptual_Phenomenon_Project.md) file
 
-$$X = 2a^2+b$$
