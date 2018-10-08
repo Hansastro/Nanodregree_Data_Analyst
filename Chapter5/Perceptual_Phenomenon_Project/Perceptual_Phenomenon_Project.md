@@ -1,56 +1,90 @@
-# Perceptual Phenomenon Project
+﻿# Perceptual Phenomenon Project
 
 ## Introduction
-The goal of this project is to study the [Stroop Effect][1]
+The goal of this project is to study the [Stroop Effect][1].
 
-## Question 1: Indentify variables in the experiment
-The independent variable is the type of the words condition. Congruent or incongruent
-The dependent variable is the time needed to read the test.
+This effect is the effect of the disturbance of some cognitive mechanisms. The subject has to read some words written in some colors. It is composed by two test. In a test the words are the name of the colors written in another color and in the other test the words are generic and are written in the same color palette as the first test.
+
+The goal of the study is to determine the effect on the response time, depending of the type of the test.
+
+## Question 1: Identify variables in the experiment
+The **independent** variable is the **type of the words condition**. Congruent or incongruent.
+
+The **dependent** variable is the **time** needed to read the test.
 
 ## Question 2a: Establish hypotheses
-We can establish the null hypothesis as the fact that the congruent and incongruent type does not effect the time to read the test.
+We can establish the null hypothesis as the fact that the congruent and incongruent type does not affect the time to read the test.
 
-The hypothesis one is the time to read the congruent words condition is significantly less than the incongruent words condition.
+The alternative hypothesis is: the time to read the congruent words condition is significantly different than the incongruent words condition.
 
 ## Question 2b: Establish statistical test
-The two hyphotesis can be written in this form:
+The two hypothesis can be written in this form:
 
-$H_0 : \mu_c = \mu_i$
+$H_0 : \overline{X}_c = \overline{X}_i$
 
-$H_a : \mu_c \neq \mu_i$
+$H_a : \overline{X}_c \neq \overline{X}_i$
 
 With:
 
-- $\mu_c$ the mean of the congruent words tests results
-- $\mu_i$ the mean of the incongruent words tests results
+- $\overline{X}_c$ the mean of the congruent words tests results
+- $\overline{X}_i$ the mean of the incongruent words tests results
 
-We have here no information about the whole population. We compare two samples.
+We have here no information about the whole population. We compare two samples. We also cannot presuppose in which direction the difference will be.
+
 We will do a two tailed t-test with a confidence level of 95% ($\alpha = 0.05$).
 
 ## Question 3: Report descriptive statistic
-From the dataset, we can extract some information about the data:
+From the data-set, we can extract some information about the data:
 
 |				| Congruent				 | Incongruent	|
 | --------- | :-----------------: | ----------: |
 | Average	| 14.05					 | 22.02			|
 | Standard Dev | 3.56				 | 4.80			|
+| Count	  	| 24 						 | 24				|
 
 ## Question 4: Plot the data
 
 ![](./histograms.png)
 \
 
+With this plot we can see a difference between the congrurent and incongruent words condition. On the sample we have the subjects took more time to complete the Incongruent words condition.
 
 ## Question 5: Perform the statistical test and interpret the results
 
-See the [t-table][2]
+With an $\alpha$ of 0.05 and a degree of freedom of 23, the $t_{critical}$ value is -2.069 and 2.069 (See the [t-table][2]). 
+
+The $H_0$ hypothesis can be written in this form:
+
+$H_0: \overline{X}_c - \overline{X}_i = 0$
+
+The difference of the two average is:
+
+$\overline{X}_D = \overline{X}_c - \overline{X}_i =  14.05 - 22.02 = -7.97$
+
+The new standard deviation is equal to:
+
+$S_D = \sqrt{(S_i^2 + S_c^2)} = \sqrt{(4.80^2 + 3.56^2)} = 5.976$
+
+We can now calculate the t-statistic:
+
+$t_{statistical} = \frac{(\overline{X}_D - 0)}{S_D / \sqrt{n}} = \frac{(-7.97 - 0)}{5.97 / \sqrt{24}} = -6.534$
+
+$t_{statistical} > t_{critical}$
+
+We can **reject** the null hypothesis.
+
+The time to read the congruent words condition is significantly different than the incongruent words condition.
+ 
+It is really something we could expect. The Incongruent words condition disturb the cognitive mechanism. 
 
 ## Question 6: Extending the investigation
 
-Mathematical and Words brain side
+This experience collides two cognitive processes of the brain. This makes the whole process unsure of the answer because the each answer contradicts the other.
 
-## Ressources
-Those ressources were used to complete this project:
+In the brain mechanisms are not completely linked together. It is easy to disturb the normal way of working. A lobe of the brain manage better the number and the other the knowledge. It can be interesting to see if there is a difference of the answering time of a subject depending of which ear hears a question and what is the difference between simple calculus and some general knowledge questions.
+
+## Resources
+Those resources were used to complete this project:
 
 - [https://en.wikipedia.org/wiki/Stroop_effect][1] : Stroop Effect
 - [https://s3.amazonaws.com/udacity-hosted-downloads/t-table.jpg][2] : t-table
