@@ -14,9 +14,9 @@ The **dependent** variable is the **time** needed to read the test.
 
 ## Question 2a: Establish hypotheses
 
-We can establish the null hypothesis as the fact that the congruent and incongruent type does not affect the population mean time to read the test.
+We can establish the null hypothesis as the fact that the congruent and incongruent type does not affect the population mean time needed to perform the test.
 
-The alternative hypothesis is: the population mean time to read the congruent words condition is significantly different than population mean time to read the text for the incongruent words condition.
+The alternative hypothesis is: the population mean time to read the congruent words condition is significantly different than population mean time to read the words for the incongruent words condition.
 
 ## Question 2b: Establish statistical test
 The two hypothesis can be written in this form:
