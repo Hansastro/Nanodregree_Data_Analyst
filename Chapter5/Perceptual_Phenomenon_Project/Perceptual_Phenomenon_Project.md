@@ -13,25 +13,28 @@ The **independent** variable is the **type of the words condition**. Congruent o
 The **dependent** variable is the **time** needed to read the test.
 
 ## Question 2a: Establish hypotheses
-We can establish the null hypothesis as the fact that the congruent and incongruent type does not affect the time to read the test.
 
-The alternative hypothesis is: the time to read the congruent words condition is significantly different than the incongruent words condition.
+We can establish the null hypothesis as the fact that the congruent and incongruent type does not affect the population mean time to read the test.
+
+The alternative hypothesis is: the population mean time to read the congruent words condition is significantly different than in the incongruent words condition.
 
 ## Question 2b: Establish statistical test
 The two hypothesis can be written in this form:
 
-$H_0 : \overline{X}_c = \overline{X}_i$
+$H_0 : \mu_c = \mu_i$
 
-$H_a : \overline{X}_c \neq \overline{X}_i$
+$H_a : \mu_c \neq \mu_i$
 
 With:
 
-- $\overline{X}_c$ the mean of the congruent words tests results
-- $\overline{X}_i$ the mean of the incongruent words tests results
+- $\mu_c$ the population mean time of the congruent words tests result.
+- $\mu_i$ the population mean time of the incongruent words tests results.
 
 We have here no information about the whole population. We compare two samples. We also cannot presuppose in which direction the difference will be.
 
-We will do a two tailed t-test with a confidence level of 95% ($\alpha = 0.05$).
+The two samples are done with the same population tested with two different independent conditions.
+
+We will do a two tailed paired sample t-test with a confidence level of 95% ($\alpha = 0.05$).
 
 ## Question 3: Report descriptive statistic
 From the data-set, we can extract some information about the data:
