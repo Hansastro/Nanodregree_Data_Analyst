@@ -74,7 +74,7 @@ $S_D = 4.865$
 
 We can now calculate the t-statistic:
 
-$t_{statistical} = \frac{(\overline{X}_D - 0)}{S_D / \sqrt{n}} = \frac{(-7.965 - 0)}{9.480 / \sqrt{24}} = -4.116$
+$t_{statistical} = \frac{(\overline{X}_D - 0)}{S_D / \sqrt{n}} = \frac{(-7.965 - 0)}{4.865 / \sqrt{24}} = -8.021$
 
 $t_{statistical} > t_{critical}$
 
