@@ -19,7 +19,7 @@ We can establish the null hypothesis as the fact that the congruent and incongru
 The alternative hypothesis is: the population mean time to read the congruent words condition is significantly different than population mean time to read the words for the incongruent words condition.
 
 ## Question 2b: Establish statistical test
-The two hypothesis can be written in this form:
+The two hypotheses can be written in this form:
 
 $H_0 : \mu_c = \mu_i$
 
@@ -27,12 +27,12 @@ $H_a : \mu_c \neq \mu_i$
 
 With:
 
-- $\mu_c$ the population mean time of the congruent words tests result.
-- $\mu_i$ the population mean time of the incongruent words tests results.
+- $\mu_c$ the population mean time of the congruent words tests.
+- $\mu_i$ the population mean time of the incongruent words tests.
 
 We have here no information about the whole population. We compare two samples. We also cannot presuppose in which direction the difference will be.
 
-The two samples are done with the same population tested the same dependent variable (the time) with two variation of a test (Congruent and Incongruent words).
+The two samples are done with the same population and test the same dependent variable (the time) with two variations of a test (Congruent and Incongruent words).
 
 We will do a two-tailed dependent paired sample t-test with a confidence level of 95% ($\alpha = 0.05$).
 
@@ -68,7 +68,7 @@ $\overline{X}_D = \overline{X}_c - \overline{X}_i =  14.05 - 22.02 = -7.97$
 
 The sample standard deviation of the difference is equal to:
 
-$S_D = \sqrt{\frac{(\sum_{a=0}^{n}(((x_{c(a)} - x_{i(a))}) - \overline{X}_{diff})^2}{n - 1}}$
+$S_D = \sqrt{\frac{(\sum_{a=0}^{n}(x_{c(a)} - x_{i(a)}) - \overline{X}_D)^2}{n - 1}}$
 
 $S_D = 4.865$
 
@@ -76,7 +76,7 @@ We can now calculate the t-statistic:
 
 $t_{statistical} = \frac{(\overline{X}_D - 0)}{S_D / \sqrt{n}} = \frac{(-7.965 - 0)}{4.865 / \sqrt{24}} = -8.021$
 
-$t_{statistical} < t_{critical}'s lower limit$
+$t_{statistical} < t_{critical}$'s lower limit
 
 We can **reject** the null hypothesis.
 
