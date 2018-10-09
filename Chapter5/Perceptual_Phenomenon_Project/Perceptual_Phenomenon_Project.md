@@ -64,13 +64,15 @@ The difference of the two average is:
 
 $\overline{X}_D = \overline{X}_c - \overline{X}_i =  14.05 - 22.02 = -7.97$
 
-The new standard deviation is equal to:
+The new standard deviation of the difference is equal to:
 
-$S_D = \sqrt{(S_i^2 + S_c^2)} = \sqrt{(4.80^2 + 3.56^2)} = 5.976$
+$S_D = \sqrt{\frac{(\sum_{a=0}^{n}(\overline{x}_{c(a)} - \overline{x}_{i(a)})^2}{n - 1}}$
+
+$S_D = 9.48$
 
 We can now calculate the t-statistic:
 
-$t_{statistical} = \frac{(\overline{X}_D - 0)}{S_D / \sqrt{n}} = \frac{(-7.97 - 0)}{5.97 / \sqrt{24}} = -6.534$
+$t_{statistical} = \frac{(\overline{X}_D - 0)}{S_D / \sqrt{n}} = \frac{(-7.965 - 0)}{9.480 / \sqrt{24}} = -4.116$
 
 $t_{statistical} > t_{critical}$
 
