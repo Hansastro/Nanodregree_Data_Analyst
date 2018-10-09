@@ -32,9 +32,9 @@ With:
 
 We have here no information about the whole population. We compare two samples. We also cannot presuppose in which direction the difference will be.
 
-The two samples are done with the same population tested with two different independent conditions.
+The two samples are done with the same population tested the same dependent variable (the time) with two variation of a test (Congruent and Incongruent words).
 
-We will do a two-tailed paired sample t-test with a confidence level of 95% ($\alpha = 0.05$).
+We will do a two-tailed dependent paired sample t-test with a confidence level of 95% ($\alpha = 0.05$).
 
 ## Question 3: Report descriptive statistic
 From the data-set, we can extract some information about the data:
