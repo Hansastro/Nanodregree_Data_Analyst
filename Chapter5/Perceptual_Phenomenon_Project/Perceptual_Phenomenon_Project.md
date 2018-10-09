@@ -95,6 +95,8 @@ Those resources were used to complete this project:
 
 - [https://en.wikipedia.org/wiki/Stroop_effect][1] : Stroop Effect
 - [https://s3.amazonaws.com/udacity-hosted-downloads/t-table.jpg][2] : t-table
+- [https://statistics.laerd.com/statistical-guides/dependent-t-test-statistical-guide.php][3] : Description of the paired t-test
 
 [1]: https://en.wikipedia.org/wiki/Stroop_effect
 [2]: https://s3.amazonaws.com/udacity-hosted-downloads/t-table.jpg
+[3]: https://statistics.laerd.com/statistical-guides/dependent-t-test-statistical-guide.php
