@@ -56,11 +56,13 @@ With this plot we can see a difference between the congrurent and incongruent wo
 
 With an $\alpha$ of 0.05 and a degree of freedom of 23, the $t_{critical}$ value is -2.069 and 2.069 (See the [t-table][2]). 
 
-The $H_0$ hypothesis can be written in this form:
+To test the $H_0$ hypothesis we have to use the difference between the two samples:
 
-$H_0: \overline{X}_c - \overline{X}_i = 0$
+This can be written in this form:
 
-The difference of the two average is:
+$\overline{X}_c - \overline{X}_i = 0$
+
+The difference of the two average values is:
 
 $\overline{X}_D = \overline{X}_c - \overline{X}_i =  14.05 - 22.02 = -7.97$
 
