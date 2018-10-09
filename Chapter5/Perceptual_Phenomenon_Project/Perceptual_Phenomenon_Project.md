@@ -34,7 +34,7 @@ We have here no information about the whole population. We compare two samples. 
 
 The two samples are done with the same population tested with two different independent conditions.
 
-We will do a two tailed paired sample t-test with a confidence level of 95% ($\alpha = 0.05$).
+We will do a two-tailed paired sample t-test with a confidence level of 95% ($\alpha = 0.05$).
 
 ## Question 3: Report descriptive statistic
 From the data-set, we can extract some information about the data:
@@ -54,7 +54,7 @@ With this plot we can see a difference between the congrurent and incongruent wo
 
 ## Question 5: Perform the statistical test and interpret the results
 
-With an $\alpha$ of 0.05 and a degree of freedom of 23, the $t_{critical}$ value is -2.069 and 2.069 (See the [t-table][2]). 
+With an $\alpha$ of 0.05 and a degree of freedom of 23, the $t_{critical}$ limits are -2.069 and 2.069 (See the [t-table][2]). 
 
 To test the $H_0$ hypothesis we have to use the difference between the two samples:
 
@@ -66,7 +66,7 @@ The difference of the two average values is:
 
 $\overline{X}_D = \overline{X}_c - \overline{X}_i =  14.05 - 22.02 = -7.97$
 
-The new standard deviation of the difference is equal to:
+The sample standard deviation of the difference is equal to:
 
 $S_D = \sqrt{\frac{(\sum_{a=0}^{n}(((\overline{x}_{c(a)} - \overline{x}_{i(a))}) - \overline{X}_{diff})^2}{n - 1}}$
 
@@ -76,13 +76,13 @@ We can now calculate the t-statistic:
 
 $t_{statistical} = \frac{(\overline{X}_D - 0)}{S_D / \sqrt{n}} = \frac{(-7.965 - 0)}{4.865 / \sqrt{24}} = -8.021$
 
-$t_{statistical} > t_{critical}$
+$t_{statistical} < t_{critical}'s lower limit$
 
 We can **reject** the null hypothesis.
 
 The time to read the congruent words condition is significantly different than the incongruent words condition.
  
-It is really something we could expect. The Incongruent words condition disturb the cognitive mechanism. 
+It is really something we could expect. The Incongruent words condition disturb the cognitive mechanism of the brain. 
 
 ## Question 6: Extending the investigation
 
