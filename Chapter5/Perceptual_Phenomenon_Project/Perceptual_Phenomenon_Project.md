@@ -68,7 +68,7 @@ $\overline{X}_D = \overline{X}_c - \overline{X}_i =  14.05 - 22.02 = -7.97$
 
 The sample standard deviation of the difference is equal to:
 
-$S_D = \sqrt{\frac{(\sum_{a=0}^{n}(((\overline{x}_{c(a)} - \overline{x}_{i(a))}) - \overline{X}_{diff})^2}{n - 1}}$
+$S_D = \sqrt{\frac{(\sum_{a=0}^{n}(((x_{c(a)} - x_{i(a))}) - \overline{X}_{diff})^2}{n - 1}}$
 
 $S_D = 4.865$
 
