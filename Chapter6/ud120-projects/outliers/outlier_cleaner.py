@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import math
 
 def outlierCleaner(predictions, ages, net_worths):
     """
@@ -12,9 +12,13 @@ def outlierCleaner(predictions, ages, net_worths):
     """
     
     cleaned_data = []
+    tenPercent = int(len(ages) * 0.1)
 
     ### your code goes here
-
+    for i in range(len(ages)):
+        cleaned_data.append((ages[i], net_worths[i], net_worths[i] - predictions[i]))
+    
+    cleaned_data = sorted(cleaned_data, key=lambda x: abs(x[2]))[:-tenPercent]
     
     return cleaned_data
 
