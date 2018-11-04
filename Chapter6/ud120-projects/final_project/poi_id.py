@@ -20,10 +20,11 @@ with open("final_project_dataset.pkl", "r") as data_file:
 # --> The TOTAL row
 ### Task 3: Create new feature(s)
 # --> Total money (sum of all benefit)
+# --> fraction of mails to/from POI
 ### Store to my_dataset for easy export below.
 my_dataset = data_dict
 
-# --> Try the function SelectKBest of sklearn to reduce the number of features and see the impact
+# --> Try the function SelectKBest, SelectPercentile, lasso of sklearn to reduce the number of features and see the impact
 
 ### Extract features and labels from dataset for local testing
 data = featureFormat(my_dataset, features_list, sort_keys = True)
