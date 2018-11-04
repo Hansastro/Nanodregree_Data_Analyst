@@ -17,15 +17,24 @@ with open("final_project_dataset.pkl", "r") as data_file:
     data_dict = pickle.load(data_file)
 
 ### Task 2: Remove outliers
+# --> The TOTAL row
 ### Task 3: Create new feature(s)
+# --> Total money (sum of all benefit)
 ### Store to my_dataset for easy export below.
 my_dataset = data_dict
+
+# --> Try the function SelectKBest of sklearn to reduce the number of features and see the impact
 
 ### Extract features and labels from dataset for local testing
 data = featureFormat(my_dataset, features_list, sort_keys = True)
 labels, features = targetFeatureSplit(data)
 
 ### Task 4: Try a varity of classifiers
+# --> NaiveBayes
+# --> Adaboost
+# --> SVM
+# --> Decision Tree
+# --> PCA
 ### Please name your classifier clf for easy export below.
 ### Note that if you want to do PCA or other multi-stage operations,
 ### you'll need to use Pipelines. For more info:
@@ -43,7 +52,7 @@ clf = GaussianNB()
 ### http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html
 
 # Example starting point. Try investigating other evaluation techniques!
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 features_train, features_test, labels_train, labels_test = \
     train_test_split(features, labels, test_size=0.3, random_state=42)
 

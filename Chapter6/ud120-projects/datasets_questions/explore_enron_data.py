@@ -20,3 +20,17 @@ import pickle
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
 
+min_exercise_stock_option = 9999999
+max__exercise_stock_option = 0
+#field = 'exercised_stock_options'
+field = 'salary'
+for i in enron_data:
+    if enron_data[i][field] != 0 and enron_data[i][field] < min_exercise_stock_option:
+        min_exercise_stock_option = enron_data[i][field]
+    elif enron_data[i][field] > max__exercise_stock_option \
+        and enron_data[i][field] != 'NaN'\
+        and i != 'TOTAL':
+        max__exercise_stock_option = enron_data[i][field]
+
+print 'Min = ' + str(min_exercise_stock_option)
+print 'Max = ' + str(max__exercise_stock_option)
