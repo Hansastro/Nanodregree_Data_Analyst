@@ -35,7 +35,7 @@ import time
 from sklearn import neighbors
 from sklearn.metrics import accuracy_score
 
-clf = neighbors.KNeighborsClassifier()
+clf = neighbors.KNeighborsClassifier(n_neighbors=8, weights='uniform')
 
 startTime = time.time()
 clf.fit(features_train, labels_train)

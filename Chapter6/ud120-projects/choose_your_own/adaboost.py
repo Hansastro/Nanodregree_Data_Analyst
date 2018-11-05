@@ -32,10 +32,10 @@ plt.show()
 ### visualization code (prettyPicture) to show you the decision boundary
 
 import time
-from sklearn import neighbors
+from sklearn import ensemble
 from sklearn.metrics import accuracy_score
 
-clf = neighbors.KNeighborsClassifier()
+clf = ensemble.AdaBoostClassifier(n_estimators=100, learning_rate=1)
 
 startTime = time.time()
 clf.fit(features_train, labels_train)

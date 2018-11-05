@@ -32,10 +32,10 @@ plt.show()
 ### visualization code (prettyPicture) to show you the decision boundary
 
 import time
-from sklearn import neighbors
+from sklearn import ensemble
 from sklearn.metrics import accuracy_score
 
-clf = neighbors.KNeighborsClassifier()
+clf = ensemble.RandomForestClassifier(n_estimators=20, criterion='gini')
 
 startTime = time.time()
 clf.fit(features_train, labels_train)
