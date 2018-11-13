@@ -26,3 +26,7 @@ The analysis show that the data are quite widely distributed. To target the valu
 Three meta-features are added:
 - The total benefit (total_payments + total_stock_value)
 - The from and to POI fractions (mail sent to/from POI divided by the total amount of from/to mail)
+
+# Select the features
+# Run a classifier
+# Check the precision and recall 
