@@ -20,5 +20,6 @@ We have here two sort of non valid data:
 In the dataset, there is a field "email address". This information is not usefull to identify the POIs (it is unique for each people). This field should be removed.
 
 # Check for outliers
+The analysis show that the data are quite widely distributed. To target the values which have an extrem value a z-Score calculation was performed. The results was check and all values are quite plausible. Just two values related to the number of mail sent are quite high. Possible but high. It is a point we have to keep in mind if this attribute is used as a feature.
 
 
