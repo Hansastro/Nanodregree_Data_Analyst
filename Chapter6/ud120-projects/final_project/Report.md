@@ -22,4 +22,7 @@ In the dataset, there is a field "email address". This information is not useful
 # Check for outliers
 The analysis show that the data are quite widely distributed. To target the values which have an extrem value a z-Score calculation was performed. The results was check and all values are quite plausible. Just two values related to the number of mail sent are quite high. Possible but high. It is a point we have to keep in mind if this attribute is used as a feature.
 
-
+# Add meta-features
+Three meta-features are added:
+- The total benefit (total_payments + total_stock_value)
+- The from and to POI fractions (mail sent to/from POI divided by the total amount of from/to mail)
