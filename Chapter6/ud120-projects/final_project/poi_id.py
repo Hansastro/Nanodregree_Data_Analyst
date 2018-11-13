@@ -19,7 +19,7 @@ with open("final_project_dataset.pkl", "r") as data_file:
 ### Task 2: Remove outliers
 # --> The TOTAL row
 ### Task 3: Create new feature(s)
-# --> Total money (sum of all benefit)
+# --> Total money (sum of all benefit total_payement + total_stock_value)
 # --> fraction of mails to/from POI
 ### Store to my_dataset for easy export below.
 my_dataset = data_dict
