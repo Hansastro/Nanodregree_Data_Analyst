@@ -33,3 +33,5 @@ Three meta-features are added:
 # Validation
 - estimate the performance on real world data
 - help to detect overfitting
+
+validation with RMSD root mean square deviation (test = training --> no overfit)
