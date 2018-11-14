@@ -2,15 +2,30 @@
 
 # Workflow
 1) Get the data from the pickle file
-2) Cleanup the data (process the 'NaN' and remove the TOTAL entry)
-3) Check for ouliers
-4) Remove the outliers
-5) Add meta-features
-3) Select the features (SelectKBest, SelectPercentile or lasso of sklearn)
-6) Run a classifer
-7) Check the precision and recall 
-8) Tune the classifier parameter and iterate to step 6 with another classifer
-9) Iterate to step 5 to try with another set of features
+2) Explore the data
+3) Cleanup the data (process the 'NaN' and remove the TOTAL entry)
+4) Check for ouliers
+5) Remove the outliers
+6) Add meta-features
+7) Select the features (SelectKBest, SelectPercentile or lasso of sklearn)
+8) Run a classifer
+9) Check the precision and recall 
+10) Tune the classifier parameter and iterate to step 6 with another classifer
+11) Iterate to step 5 to try with another set of features
+
+# Foreword
+# Question 1: Goal of the project and Data exploration
+The goal of this project is to identify the persons of interest in a dataset created after the Enron scandal of 2001. In such scandal a lot of people are involved and it is very hard to know who played a role and most importantly who took benefices of the situation. Find the really guilty people is quite difficult. The amount of data is also quite huge. Mails, financital data, legal documents... To perform the investigation some machine learning technics can help to focus on some relevant people.
+
+The provided dataset contains some financial data about people who was involved in the Enron's business. 
+
+![NaN vs Non NaN Values](./NaN_Value.png)
+
+# Question 2: Features selection
+# Question 3: Choice of an algorithm
+# Question 4: Tuning of the parameters of the algorithm
+# Question 5: Validation
+# Question 6: Evaluation metrics
 
 # Cleanup the data
 We have here two sort of non valid data:
