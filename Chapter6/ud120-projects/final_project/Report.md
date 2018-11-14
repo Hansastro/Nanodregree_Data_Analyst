@@ -17,7 +17,9 @@
 # Question 1: Goal of the project and Data exploration
 The goal of this project is to identify the persons of interest in a dataset created after the Enron scandal of 2001. In such scandal a lot of people are involved and it is very hard to know who played a role and most importantly who took benefices of the situation. Find the really guilty people is quite difficult. The amount of data is also quite huge. Mails, financital data, legal documents... To perform the investigation some machine learning technics can help to focus on some relevant people.
 
-The provided dataset contains some financial data about people who was involved in the Enron's business. 
+The provided dataset contains some financial data about people who was involved in the Enron's business. In the dataset there is 146 entries and for each entrie there is 21 attributes. We can see a lot of 'NaN' value. Alltogether there is 44% of the value are 'NaN'. Most of the values of the attribute 'loan_advance' are 'NaN'. All values of the POI attribute are right (0 or 1). We have 18 entries tagged as POI in the dataset.
+
+About the outliers. An entry is the total of all the value and has to be removed. To find other outliers a z-score was used to find the values which differ from the standard. All values with a z-score greater than 4 or smaller than -2 were inspected. It represent 38 values. Nothing were found inrealsitic. 2 people sent more than 12000 email. Those two values could have an impact of the classifer but the total amount of mail is probably not very discriminent to detect the POI. No correction are needed here but if we choose the amount of mail sent as a feature for the classifer, we have to keep in mind there is some extrem values.
 
 ![NaN vs Non NaN Values](./NaN_Value.png)
 
