@@ -24,6 +24,23 @@ About the outliers. An entry is the total of all the value and has to be removed
 ![NaN vs Non NaN Values](./NaN_Value.png)
 
 # Question 2: Features selection
+In the dataset we can exclude the 'email_address' attribute from the feature selection. This attribute is unique for each people and add no classification information as it is. It is possible to extract the company name from the email address. This approch will not be taken here because the dataset is focused on the individual benefit of people and not of the benefit of each company.
+
+We saw during the data exploration that some attributes contain a lot of NaN. The dataset contains several type of financial data. We can add a feature which merge all the benefits. It is easy to calculate. It is total_payments + total_stock_value. Another feature we can add is the ratio of mail send or received to or from a POIs. If somebody exchange a lot with a POI, this person could be involved in the fraud. Here we add two features:  from_poi_to_this_person / to_message and from_this_person_to_poi / from_message.
+
+To select the feature the SelectKBest algorithm was used. The scores show some features score more than 15 and the others are quite lower. We selected a subset of 6 features
+
+| Feature | Score |
+---|---
+| bonus 	| 21.060002 |
+| total_stock_value 	| 24.467654 |
+| salary 	| 18.575703 |
+| fraction_to_poi 	| 16.641707 |
+| exercised_stock_options 	| 25.097542 |
+| total_benefit 	| 17.187006 |
+
+
+
 # Question 3: Choice of an algorithm
 # Question 4: Tuning of the parameters of the algorithm
 # Question 5: Validation
