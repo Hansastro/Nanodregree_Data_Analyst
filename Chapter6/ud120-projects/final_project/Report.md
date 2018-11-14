@@ -63,7 +63,7 @@ Three meta-features are added:
 
 # Select the features
 # Run a classifier
-# Check the precision and recall 
+# Check the accuracy, precision and recall 
 # Validation
 - estimate the performance on real world data
 - help to detect overfitting
