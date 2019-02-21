@@ -22,30 +22,15 @@ descision_tree_features_list = ['poi',
                  'shared_receipt_with_poi'
                  ]
 
-best_7_features_list = ['poi',
+best_features_list = [ 'poi',
                       'exercised_stock_options',
                       'total_stock_value',
                       'bonus',
                       'salary',
                       'total_benefit',
-                      'fraction_to_poi',
-                      'deferred_income'
-                      ]
+                      'fraction_to_poi']
 
-best_10_features_list = ['poi',
-                      'exercised_stock_options',
-                      'total_stock_value',
-                      'bonus',
-                      'salary',
-                      'total_benefit',
-                      'fraction_to_poi',
-                      'deferred_income',
-                      'long_term_incentive',
-                      'restricted_stock',
-                      'total_payments'
-                      ]
-
-features_list = best_10_features_list
+features_list = descision_tree_features_list
 # features_list = ['poi',
 #                  'to_messages',
 #                  'deferral_payments',
@@ -140,21 +125,22 @@ labels, features = targetFeatureSplit(data)
 
 # Gaussian Naive Bayes
 # ---------------------
-from sklearn.naive_bayes import GaussianNB
+from sklearn import tree
+#from sklearn.naive_bayes import GaussianNB
 #clf = GaussianNB()
 # ---------------------
 
 # Decision Tree
 # -------------
 from sklearn.tree import DecisionTreeClassifier
-#clf = DecisionTreeClassifier(splitter='best', max_leaf_nodes=5, min_samples_leaf=4, random_state=42, criterion='entropy', min_samples_split=2, max_depth=2)
+clf = DecisionTreeClassifier(splitter='best', max_leaf_nodes=5, min_samples_leaf=4, random_state=42, criterion='entropy', min_samples_split=2, max_depth=2)
 #clf = DecisionTreeClassifier()
 # -------------
 
 # KNN
 # ---
-from sklearn.neighbors import KNeighborsClassifier
-clf = KNeighborsClassifier(n_neighbors=2, leaf_size=1, algorithm='ball_tree', p=2)
+#from sklearn.neighbors import KNeighborsClassifier
+#clf = KNeighborsClassifier(n_neighbors=6, leaf_size=1, algorithm='ball_tree', p=2)
 #clf = KNeighborsClassifier()
 # ---
 
@@ -167,8 +153,8 @@ clf = KNeighborsClassifier(n_neighbors=2, leaf_size=1, algorithm='ball_tree', p=
 
 # scaler = MinMaxScaler()
 # features_rescaled = scaler.fit_transform(features)
-# params = {'n_neighbors': [2, 3, 4, 5, 6, 7, 8, 9, 10],
-#           'algorithm': ['ball_tree', 'kd_tree', 'brute'],
+# params = {'n_neighbors': [2,3,4,5,6,7,8,9,10],
+#           'algorithm' : ['ball_tree', 'kd_tree', 'brute'],
 #           'leaf_size': [1, 2, 3, 4, 5, 10, 20, 30, 40, 50],
 #           'p': [1, 2, 3, 4, 5]}
 # gridSearch = GridSearchCV(KNeighborsClassifier(), params)

@@ -1,0 +1,5 @@
+The following documents were used to perform the project:
+- sklearn documentation: https://scikit-learn.org/0.18/documentation.html
+- Naive Bayes Classifier: https://en.wikipedia.org/wiki/Naive_Bayes_classifier
+- Precision and Recall: https://en.wikipedia.org/wiki/Precision_and_recall
+- The internet site stackoverflow for miscellaneous topics
